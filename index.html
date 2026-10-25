@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Pustaka ajaib untuk mengubah web menjadi gambar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+</head>
+<body>
+    <h2>Let's Play Football 
+!</h2>
+    
+    <div class="palette">
+        <!-- 9 Warna Palet -->
+        <div class="color-cell" style="background-color: rgb(255, 102, 46);"></div>
+        <div class="color-cell" style="background-color: rgb(26, 218, 84);"></div>
+        <div class="color-cell" style="background-color: rgb(83, 15, 255);"></div>
+        <div class="color-cell" style="background-color: rgb(255, 236, 26);"></div>
+        <div class="color-cell" style="background-color: rgb(142, 229, 255);"></div>
+        <div class="color-cell" style="background-color: rgb(156, 39, 176);"></div>
+        <div class="color-cell" style="background-color: rgb(255, 152, 0);"></div>
+        <div class="color-cell" style="background-color: rgb(233, 30, 99);"></div>
+        <div class="color-cell" style="background-color: rgb(255, 255, 255);"></div>
+        <div class="color-cell" style="background-color: black;"></div>
+        
+        <div class="pemisah"></div>
+        
+        <!-- Alat Gambar -->
+        <div class="tool-cell" id="tool-eraser" title="Penghapus">🧽</div>
+        <div class="tool-cell" id="tool-fill" title="Cat Tumpah">🪣</div>
+        <div class="tool-cell" id="tool-rainbow" title="Kuas Pelangi">🌈</div>
+        
+        <div class="pemisah"></div>
+        
+        <!-- Tombol Aksi -->
+        <div class="action-btn" id="btn-grid" title="Sembunyikan Garis">🔲</div>
+        <div class="action-btn" id="btn-save" title="Simpan ke Cookie">🔖</div>
+        <div class="action-btn" id="btn-load" title="Muat dari Cookie">📂</div>
+        <div class="action-btn" id="btn-download" title="Unduh Gambar">💾</div>
+        <div class="action-btn" id="btn-clear" title="Hapus Semua">🗑️</div>
+    </div>
+
+    <!-- Kanvas Kerja -->
+    <div class="canvas-container">
+        <div class="canvas"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <button id="undoBtn" title="Undo (Ctrl+Z)">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 7v6h6" />
+    <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+  </svg>
+</button>
+
+<button id="redoBtn" title="Redo (Ctrl+Y)">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 7v6h-6" />
+    <path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7" />
+  </svg>
+</button>
+
+</body>
+</html>

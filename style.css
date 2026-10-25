@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2c2c2c;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 { margin-top: 20px; }
+
+/* --- Tampilan Palet & Tombol --- */
+.palette {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #3d3d3d;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
+}
+
+.color-cell, .tool-cell, .action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid transparent;
+    font-size: 22px; /* Ukuran pas untuk Emoji */
+    transition: transform 0.1s, border-color 0.1s;
+}
+
+.color-cell { border-color: #555; }
+.tool-cell, .action-btn { background-color: #555; }
+.tool-cell:hover, .action-btn:hover { background-color: #777; }
+
+.selected {
+    border-color: #fff !important;
+    transform: scale(1.1);
+}
+
+.pemisah {
+    width: 2px;
+    height: 40px;
+    background-color: #666;
+    margin: 0 5px;
+}
+
+/* --- Tampilan Kanvas Grid --- */
+.canvas-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.canvas {
+    display: grid;
+    grid-template-columns: repeat(30, 20px); 
+    grid-template-rows: repeat(15, 20px);    
+    gap: 1px; /* Jarak standar antar pixel */
+    background-color: #ccc; 
+    border: 1px solid #ccc;
+}
+
+/* Fitur Sembunyikan Garis Kisi (Dipanggil dari JS) */
+.canvas.hide-grid {
+    gap: 0px; 
+    background-color: transparent; 
+    border: 2px solid transparent; 
+}
+
+.pixel {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255); 
+    cursor: crosshair;
+}
+.pixel:hover { opacity: 0.8; }
+#undoBtn:disabled, #redoBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
